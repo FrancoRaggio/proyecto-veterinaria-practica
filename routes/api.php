@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Rutas protegidas
+Route::get('/mascota', 'App\Http\Controllers\MascotaController@all');
+Route::post('/mascota','App\Http\Controllers\MascotaController@create');
+Route::middleware('auth:api')->group( function () {
+    
 });
